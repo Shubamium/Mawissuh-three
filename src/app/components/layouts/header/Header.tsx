@@ -7,30 +7,44 @@ type Props = {};
 
 export default function Header({}: Props) {
   return (
-    <header>
+    <header id="header">
       <h1 hidden={true}>Marimanagement</h1>
-      <nav>
+      <nav className="panel">
         <div className="box"></div>
-        <Link href={"/"}>home</Link>
-        <Link href={"/management"}>managemetn</Link>
-        <Link href={"/talents"}>talents</Link>
+        <Link className="nav-btn active" href={"/"}>
+          home
+        </Link>
+        <Link className="nav-btn" href={"/management"}>
+          management
+        </Link>
+        <Link className="nav-btn" href={"/talents"}>
+          talents
+        </Link>
       </nav>
-      <div className="credits">
-        <div className="credit">
-          <p>web design</p>
+      <div className="credits panel">
+        <a href="https://x.com/Shubamium2" className="credit">
+          <h2>web design</h2>
           <p>@shubamium</p>
-        </div>
+        </a>
         <div className="contacts">
-          <a href="https://x.com/SheepishMage" target="_blank">
+          <a
+            href="https://x.com/SheepishMage"
+            className={"c-btn btn"}
+            target="_blank"
+          >
             <FaTwitter />
           </a>
-          <a href="https://twitter.com/mawissuh" target="_blank">
+          <a
+            href="https://twitter.com/mawissuh"
+            className={"c-btn btn"}
+            target="_blank"
+          >
             <FaTwitter />
           </a>
         </div>
-        <div className="taskbar">
+        <button className="taskbar-btn btn">
           <BiMenu />
-        </div>
+        </button>
       </div>
     </header>
   );

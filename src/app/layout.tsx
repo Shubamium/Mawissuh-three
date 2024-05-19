@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Prompt, Quicksand } from "next/font/google";
 import "./globals.scss";
 import { CSSProperties } from "react";
-import Header from "./components/layouts/header/header";
+import Header from "./components/layouts/header/Header";
 
 const prompt = Prompt({
   subsets: ["latin"],
