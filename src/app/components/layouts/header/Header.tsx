@@ -28,7 +28,7 @@ export default function Header({}: Props) {
         </a>
         <div className="contacts">
           <a
-            href="https://x.com/SheepishMage"
+            href="https://x.com/SheepishMari"
             className={"c-btn btn"}
             target="_blank"
           >

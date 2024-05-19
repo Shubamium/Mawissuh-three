@@ -6,17 +6,20 @@
 
 :root {
   --lBrown: #d3896b;
+  --paleBrown: #968f8d;
   --brown: #7f6e6e;
   --blue: #1ea2e4;
 }
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  // max-width: 100vw;
+  // overflow-x: hidden;
 }
 body {
   background: url("/backgrounds/main-bg.png"), #fffaf9;
   animation: bganim 90s linear infinite;
+  max-width: 100vw;
+  overflow-x: hidden;
   border-top: 10px solid var(--blue);
   @keyframes bganim {
     0% {
