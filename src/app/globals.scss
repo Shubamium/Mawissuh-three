@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+}
+
+main {
+  background: url("/backgrounds/main-bg.png");
+  animation: bganim 90s linear infinite;
+  @keyframes bganim {
+    0% {
+      background-position: 0px 0px;
+    }
+    100% {
+      background-position: 0px 3000px;
+    }
+  }
+  min-height: 100vh;
+  width: 100vw;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
