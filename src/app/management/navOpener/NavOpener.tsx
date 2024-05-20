@@ -5,7 +5,7 @@ import { BiMenu } from "react-icons/bi";
 type Props = {};
 
 export default function NavOpener({}: Props) {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   // const []
   useEffect(() => {
     document.addEventListener("scroll", (e) => {
@@ -15,6 +15,10 @@ export default function NavOpener({}: Props) {
         setVisible(false);
       }
     });
+
+    return () => {
+      setVisible(false);
+    };
   }, []);
   return (
     <div className={`nav-opener ${visible ? "visible" : ""}`}>

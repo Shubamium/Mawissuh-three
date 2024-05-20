@@ -8,7 +8,7 @@ import { MdVerticalAlignTop } from "react-icons/md";
 type Props = {};
 
 export default function SectionJump({}: Props) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     document.body.addEventListener("nav-toggle", () => {
