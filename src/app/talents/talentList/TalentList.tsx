@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { GoTriangleLeft } from "react-icons/go";
 import { createPortal } from "react-dom";
 import { FaTwitter } from "react-icons/fa";

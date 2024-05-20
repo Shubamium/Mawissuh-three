@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "./header.scss";
 import { FaTwitter } from "react-icons/fa";
@@ -42,7 +43,13 @@ export default function Header({}: Props) {
             <FaTwitter />
           </a>
         </div>
-        <button className="taskbar-btn btn">
+        <button
+          className="taskbar-btn btn"
+          onClick={() => {
+            const event = new Event("nav-toggle");
+            document.body.dispatchEvent(event);
+          }}
+        >
           <BiMenu />
         </button>
       </div>
