@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { GoBrowser, GoTriangleLeft } from "react-icons/go";
 import { createPortal } from "react-dom";
 import { FaTwitch, FaTwitter } from "react-icons/fa";
@@ -16,7 +16,7 @@ type Props = {
 export default function TalentList({ activeTalent, inactiveTalent }: Props) {
   const [show, setShow] = useState(false);
   const [selectedT, setSelectedT] = useState<TalentData | null>(null);
-
+  const [mounted, setMounted] = useState(false);
   const contactIcon: { [key in SiteList]: JSX.Element } = {
     twitter: <FaTwitter />,
     twitch: <FaTwitch />,
@@ -25,6 +25,10 @@ export default function TalentList({ activeTalent, inactiveTalent }: Props) {
     instagram: <CgInstagram />,
     youtube: <BsYoutube />,
   };
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
     <section className="talent-list">
       <div className="title-part">
@@ -135,52 +139,53 @@ export default function TalentList({ activeTalent, inactiveTalent }: Props) {
         </div>
       </div>
 
-      {createPortal(
-        <div
-          onClick={() => {
-            setShow(false);
-          }}
-          className={`talent-modal ${show ? "show" : "closed"}`}
-        >
-          <div className="talent-card">
-            <div className="card">
-              <div className="head-text">
-                <p>{selectedT?.title}</p>
-                <h2>{selectedT?.name}</h2>
-              </div>
-              <div className="display">
-                <img
-                  src={selectedT?.pfp ? urlFor(selectedT?.pfp).url() : ""}
-                  alt=""
-                  className="pfp"
-                />
-              </div>
-              <div className="t-contacts">
-                {selectedT?.contacts?.map((contact, index) => {
-                  return (
-                    <a
-                      href={contact.url}
-                      target="_blank"
-                      className="t-contact btn"
-                      key={"modal-contact" + index}
-                    >
-                      {contactIcon[contact.type]}
-                    </a>
-                  );
-                })}
-                {/* <a href="#" target="_blank" className="t-contact btn">
+      {mounted &&
+        createPortal(
+          <div
+            onClick={() => {
+              setShow(false);
+            }}
+            className={`talent-modal ${show ? "show" : "closed"}`}
+          >
+            <div className="talent-card">
+              <div className="card">
+                <div className="head-text">
+                  <p>{selectedT?.title}</p>
+                  <h2>{selectedT?.name}</h2>
+                </div>
+                <div className="display">
+                  <img
+                    src={selectedT?.pfp ? urlFor(selectedT?.pfp).url() : ""}
+                    alt=""
+                    className="pfp"
+                  />
+                </div>
+                <div className="t-contacts">
+                  {selectedT?.contacts?.map((contact, index) => {
+                    return (
+                      <a
+                        href={contact.url}
+                        target="_blank"
+                        className="t-contact btn"
+                        key={"modal-contact" + index}
+                      >
+                        {contactIcon[contact.type]}
+                      </a>
+                    );
+                  })}
+                  {/* <a href="#" target="_blank" className="t-contact btn">
                   <FaTwitter />
                 </a> */}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="exit-text">
-            <h2>click anywhere to close</h2>
-            <hr />
-          </div>
-        </div>,
-        document.body
-      )}
+            <div className="exit-text">
+              <h2>click anywhere to close</h2>
+              <hr />
+            </div>
+          </div>,
+          document.body
+        )}
     </section>
   );
 }

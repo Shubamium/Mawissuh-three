@@ -47,11 +47,7 @@ export default function Header({}: Props) {
           >
             <FaTwitter />
           </a>
-          <a
-            href="https://twitter.com/mawissuh"
-            className={"c-btn btn"}
-            target="_blank"
-          >
+          <a href="mailto" className={"c-btn btn"} target="_blank">
             <FaTwitter />
           </a>
         </div>
