@@ -47,9 +47,9 @@ export default function Header({}: Props) {
           >
             <FaTwitter />
           </a>
-          <a href="mailto" className={"c-btn btn"} target="_blank">
+          {/* <a href="mailto" className={"c-btn btn"} target="_blank">
             <FaTwitter />
-          </a>
+          </a> */}
         </div>
         {include("/management") && (
           <button

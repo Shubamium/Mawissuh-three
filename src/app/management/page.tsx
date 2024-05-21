@@ -99,12 +99,12 @@ export default async function Management({}: Props) {
               <p>talent manager</p>
             </div>
             <div className="contacts">
-              <a href="#" className="c-btn btn">
+              <a href="https://x.com/SheepishMari" className="c-btn btn">
                 <FaTwitter />
               </a>
-              <a href="#" className="c-btn btn">
+              {/* <a href="#" className="c-btn btn">
                 <FaTwitter />
-              </a>
+              </a> */}
             </div>
           </div>
           <p className="bio">{generalData.main_description}</p>
