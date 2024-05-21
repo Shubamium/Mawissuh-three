@@ -1,12 +1,30 @@
 "use client";
 import React, { useState } from "react";
-import { GoTriangleLeft } from "react-icons/go";
+import { GoBrowser, GoTriangleLeft } from "react-icons/go";
 import { createPortal } from "react-dom";
-import { FaTwitter } from "react-icons/fa";
-type Props = {};
+import { FaTwitch, FaTwitter } from "react-icons/fa";
+import { TalentData, SiteList } from "../page";
+import { urlFor } from "@/db/db";
+import { FaTiktok } from "react-icons/fa6";
+import { CgInstagram } from "react-icons/cg";
+import { BsYoutube } from "react-icons/bs";
+type Props = {
+  activeTalent: TalentData[];
+  inactiveTalent: TalentData[];
+};
 
-export default function TalentList({}: Props) {
+export default function TalentList({ activeTalent, inactiveTalent }: Props) {
   const [show, setShow] = useState(false);
+  const [selectedT, setSelectedT] = useState<TalentData | null>(null);
+
+  const contactIcon: { [key in SiteList]: JSX.Element } = {
+    twitter: <FaTwitter />,
+    twitch: <FaTwitch />,
+    website: <GoBrowser />,
+    tiktok: <FaTiktok />,
+    instagram: <CgInstagram />,
+    youtube: <BsYoutube />,
+  };
   return (
     <section className="talent-list">
       <div className="title-part">
@@ -24,12 +42,33 @@ export default function TalentList({}: Props) {
             <h2>current</h2>
           </div>
           <div className="talents">
-            <div
-              onClick={() => {
-                setShow(true);
-              }}
-              className="talent"
-            >
+            {activeTalent.map((talent) => {
+              return (
+                <div
+                  onClick={() => {
+                    setShow(true);
+                    setSelectedT(talent);
+                  }}
+                  className="talent"
+                  key={talent._id}
+                >
+                  <div className="head">
+                    <h2>{talent.name}</h2>
+                    <hr />
+                  </div>
+                  <div className="display">
+                    <img
+                      src={
+                        urlFor(talent.pfp).url() ?? "/graphics/pfp-sample.png"
+                      }
+                      alt=""
+                      className="pfp"
+                    />
+                  </div>
+                </div>
+              );
+            })}
+            {/* <div className="talent">
               <div className="head">
                 <h2>kira hishotori</h2>
                 <hr />
@@ -55,16 +94,7 @@ export default function TalentList({}: Props) {
               <div className="display">
                 <img src="/graphics/pfp-sample.png" alt="" className="pfp" />
               </div>
-            </div>
-            <div className="talent">
-              <div className="head">
-                <h2>kira hishotori</h2>
-                <hr />
-              </div>
-              <div className="display">
-                <img src="/graphics/pfp-sample.png" alt="" className="pfp" />
-              </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="talent-group past">
@@ -75,42 +105,32 @@ export default function TalentList({}: Props) {
             <h2>past</h2>
           </div>
           <div className="talents">
-            <div className="talent">
-              <div className="head">
-                <h2>kira hishotori</h2>
-                <hr />
-              </div>
-              <div className="display">
-                <img src="/graphics/pfp-sample.png" alt="" className="pfp" />
-              </div>
-            </div>
-            <div className="talent">
-              <div className="head">
-                <h2>kira hishotori</h2>
-                <hr />
-              </div>
-              <div className="display">
-                <img src="/graphics/pfp-sample.png" alt="" className="pfp" />
-              </div>
-            </div>
-            <div className="talent">
-              <div className="head">
-                <h2>kira hishotori</h2>
-                <hr />
-              </div>
-              <div className="display">
-                <img src="/graphics/pfp-sample.png" alt="" className="pfp" />
-              </div>
-            </div>
-            <div className="talent">
-              <div className="head">
-                <h2>kira hishotori</h2>
-                <hr />
-              </div>
-              <div className="display">
-                <img src="/graphics/pfp-sample.png" alt="" className="pfp" />
-              </div>
-            </div>
+            {inactiveTalent.map((talent) => {
+              return (
+                <div
+                  onClick={() => {
+                    setShow(true);
+                    setSelectedT(talent);
+                  }}
+                  className="talent"
+                  key={talent._id}
+                >
+                  <div className="head">
+                    <h2>{talent.name}</h2>
+                    <hr />
+                  </div>
+                  <div className="display">
+                    <img
+                      src={
+                        urlFor(talent.pfp).url() ?? "/graphics/pfp-sample.png"
+                      }
+                      alt=""
+                      className="pfp"
+                    />
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -125,22 +145,32 @@ export default function TalentList({}: Props) {
           <div className="talent-card">
             <div className="card">
               <div className="head-text">
-                <p>title-or-role</p>
-                <h2>kira hishotori</h2>
+                <p>{selectedT?.title}</p>
+                <h2>{selectedT?.name}</h2>
               </div>
               <div className="display">
-                <img src="/graphics/pfp-sample.png" alt="" className="pfp" />
+                <img
+                  src={selectedT?.pfp ? urlFor(selectedT?.pfp).url() : ""}
+                  alt=""
+                  className="pfp"
+                />
               </div>
               <div className="t-contacts">
-                <a href="#" target="_blank" className="t-contact btn">
+                {selectedT?.contacts?.map((contact, index) => {
+                  return (
+                    <a
+                      href={contact.url}
+                      target="_blank"
+                      className="t-contact btn"
+                      key={"modal-contact" + index}
+                    >
+                      {contactIcon[contact.type]}
+                    </a>
+                  );
+                })}
+                {/* <a href="#" target="_blank" className="t-contact btn">
                   <FaTwitter />
-                </a>
-                <a href="#" target="_blank" className="t-contact btn">
-                  <FaTwitter />
-                </a>
-                <a href="#" target="_blank" className="t-contact btn">
-                  <FaTwitter />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>

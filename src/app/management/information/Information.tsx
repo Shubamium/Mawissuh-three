@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import { BsCircle, BsCircleFill } from "react-icons/bs";
 import { CiCircleList } from "react-icons/ci";
 import "./information.scss";
-type Props = {};
+import { Information as InformationData } from "../page";
+type Props = {
+  infoList: InformationData[];
+};
 
-export default function Information({}: Props) {
+export default function Information({ infoList }: Props) {
   const [activeCategory, setActiveCategory] = useState(0);
   return (
     <section id="information">
@@ -19,34 +22,39 @@ export default function Information({}: Props) {
 
         <div className="information-part">
           <div className="informations-list">
-            <div className="info-card">
+            {infoList[activeCategory].information?.map((info) => {
+              return (
+                <div className="info-card" key={info._key}>
+                  <h2>{info.title}</h2>
+                  <p>{info.description}</p>
+                </div>
+              );
+            })}
+            {/* <div className="info-card">
               <h2>Agreed Service - Non Refundable</h2>
               <p>
                 You agree that the monthly rate is sufficient for you for my
                 services. You acknowledge that the agreed-upon payment for the
                 services is also non-refundable!
               </p>
-            </div>
-            <div className="info-card">
-              <h2>Agreed Service - Non Refundable</h2>
-              <p>
-                You agree that the monthly rate is sufficient for you for my
-                services. You acknowledge that the agreed-upon payment for the
-                services is also non-refundable!
-              </p>
-            </div>
+            </div> */}
           </div>
           <div className="information-controls">
-            <button
-              onClick={() => {
-                setActiveCategory(0);
-              }}
-              className={`btn btn-info ${activeCategory === 0 ? "active" : ""}`}
-            >
-              {" "}
-              <BsCircleFill /> payment
-            </button>
-            <button
+            {infoList.map((info, index) => {
+              return (
+                <button
+                  onClick={() => {
+                    setActiveCategory(index);
+                  }}
+                  key={"btn-open-" + info._id}
+                  className={`btn btn-info ${activeCategory === index ? "active" : ""}`}
+                >
+                  {" "}
+                  <BsCircleFill /> {info.title}
+                </button>
+              );
+            })}
+            {/* <button
               onClick={() => {
                 setActiveCategory(1);
               }}
@@ -63,7 +71,7 @@ export default function Information({}: Props) {
             >
               {" "}
               <BsCircleFill /> payment
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
