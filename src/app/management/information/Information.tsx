@@ -15,7 +15,10 @@ export default function Information({ infoList }: Props) {
       <div className="confine">
         <div className="information-head">
           <div className="head-text">
-            <h2>information ~</h2>
+            <h2>
+              <img src="/decors/info-star.svg" alt="" className="star" />
+              <span>information ~</span>
+            </h2>
             <hr />
           </div>
         </div>
@@ -51,6 +54,11 @@ export default function Information({ infoList }: Props) {
                 >
                   {" "}
                   <BsCircleFill /> {info.title}
+                  <img
+                    src="/decors/info-btn-circle.svg"
+                    alt=""
+                    className="circle"
+                  />
                 </button>
               );
             })}
@@ -75,6 +83,7 @@ export default function Information({ infoList }: Props) {
           </div>
         </div>
       </div>
+      <img src="/decors/info-side-circle.png" alt="" className="decor-side" />
     </section>
   );
 }

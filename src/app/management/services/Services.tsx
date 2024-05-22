@@ -71,7 +71,10 @@ export default function Services({ main, other }: Props) {
             </article>
             <div className="service-includes">
               <div className="include-panel">
-                <h2>inlcuded + + + </h2>
+                <h2>
+                  <img src="/decors/include-star.svg" alt="" className="star" />
+                  <span>included + + +</span>
+                </h2>
                 <ul>
                   {main.includes?.map((include, index) => {
                     return (

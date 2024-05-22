@@ -94,7 +94,14 @@ export default async function Management({}: Props) {
       <section className="management" id="general">
         <article>
           <div className="profile-head">
-            <h2>MARISSA</h2>
+            <h2>
+              <img
+                src="/decors/heading-decor.svg"
+                alt=""
+                className="decor_head"
+              />
+              MARISSA
+            </h2>
             <div className="highlight">
               <p>talent manager</p>
             </div>
@@ -107,6 +114,11 @@ export default async function Management({}: Props) {
               </a> */}
             </div>
           </div>
+          <img
+            src="/decors/decor_triangle.png"
+            alt=""
+            className="decor_triangle"
+          />
           <p className="bio">{generalData.main_description}</p>
         </article>
       </section>
@@ -147,7 +159,11 @@ export default async function Management({}: Props) {
         <div className="confine">
           <div className="skills-head">
             <div className="text-part">
-              <h2>skills & specialty</h2>
+              <h2>
+                <img src="/decors/skill-star.svg" alt="" className="stars" />
+                <span> skills & specialty</span>
+              </h2>
+
               <hr />
             </div>
           </div>

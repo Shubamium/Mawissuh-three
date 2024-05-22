@@ -51,7 +51,7 @@
     padding: 2em;
     margin: 2em 0;
     background: url("/backgrounds/dots.png"), #d8bdb6;
-
+    overflow: hidden;
     .confine {
       max-width: 1100px;
       margin: 0 auto;
@@ -144,6 +144,9 @@
           &::before {
             rotate: -5deg;
           }
+          .include-panel .star {
+            scale: 1.6;
+          }
         }
         .include-panel {
           height: 100%;
@@ -154,14 +157,25 @@
           min-height: 300px;
           position: relative;
           z-index: 1;
-
           h2 {
+            position: relative;
+            // width: ;
+
+            .star {
+              position: absolute;
+              top: -5%;
+              left: 10%;
+              scale: 1.5;
+              height: 100%;
+              transition: all 500ms ease;
+              // width: 120px;
+            }
           }
 
           ul {
             margin-left: 1em;
             li {
-              font-size: 1.2rem;
+              font-size: 1.3rem;
               font-weight: 600;
               color: var(--blue);
               &::marker {
@@ -180,6 +194,31 @@
     padding: 2em;
     margin: 2em 0;
     background: url("/backgrounds/dots.png"), #d8bdb6;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -20%;
+      left: -30%;
+      width: 40%;
+      height: 70%;
+      background: #c0a7a1;
+      border-radius: 0 2em 2em 0;
+      z-index: -2;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: -20%;
+      right: -30%;
+      width: 40%;
+      height: 70%;
+      background: #c0a7a1;
+      border-radius: 80px 0 0 80px;
+      z-index: -2;
+    }
     .confine {
       display: flex;
       flex-direction: column;
