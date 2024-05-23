@@ -63,10 +63,13 @@ export default function Services({ main, other }: Props) {
               </div>
 
               <div className="action">
-                <button className="btn btn-apply">
+                <a
+                  href="https://x.com/messages/compose?recipient_id=1379171069043564552&text=Hi%2C+I%27m+interested+in+hiring+you+as+my+manager.+Could+we+discuss+further+details%3F+🪄🌟+📋"
+                  className="btn btn-apply"
+                >
                   {" "}
                   Apply <BiBriefcaseAlt />
-                </button>
+                </a>
               </div>
             </article>
             <div className="service-includes">
@@ -133,9 +136,12 @@ export default function Services({ main, other }: Props) {
         <div className="text">
           <p>Looking for more service?</p>
           <hr />
-          <button className="btn btn-request">
+          <a
+            href="https://x.com/messages/compose?recipient_id=1379171069043564552&text=Hi%2C+I%27m+interested+in+hiring+you+as+my+manager.+Could+we+discuss+further+details%3F+🪄🌟+📋"
+            className="btn btn-request"
+          >
             REQUEST SERVICE <GoTriangleRight />
-          </button>
+          </a>
         </div>
       </div>
     </section>
