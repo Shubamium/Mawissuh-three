@@ -150,7 +150,7 @@ export default async function Management({}: Props) {
             </div>
           </div>
           <figure className="graphics">
-            <img src="/graphics/milestone-art.png" alt="" className="ms-art" />
+            {/* <img src="/graphics/milestone-art.png" alt="" className="ms-art" /> */}
           </figure>
         </div>
       </section>
