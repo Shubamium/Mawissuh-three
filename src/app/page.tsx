@@ -6,7 +6,12 @@ export default function Home() {
       <section className="hero">
         <div className="confine">
           <figure>
-            {/* <img src="/graphics/placeholder-logo.png" alt="" className="logo" /> */}
+            <img
+              src="/graphics/placeholder-logo.png"
+              style={{ display: "none" }}
+              alt=""
+              className="logo"
+            />
           </figure>
           <article>
             <h2>

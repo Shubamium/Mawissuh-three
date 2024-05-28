@@ -39,6 +39,12 @@ export default function Header({}: Props) {
           <h2>web design</h2>
           <p>@shubamium</p>
         </a>
+      </div>
+      <div className="credits panel">
+        {/* <a href="https://x.com/Shubamium2" className="credit">
+          <h2>web design</h2>
+          <p>@shubamium</p>
+        </a> */}
         <div className="contacts">
           <a
             href="https://x.com/SheepishMari"
