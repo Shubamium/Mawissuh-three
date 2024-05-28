@@ -8,7 +8,7 @@ export default function Home() {
           <figure>
             <img
               src="/graphics/placeholder-logo.png"
-              style={{ display: "none" }}
+              style={{ opacity: 0 }}
               alt=""
               className="logo"
             />
