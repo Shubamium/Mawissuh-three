@@ -64,7 +64,7 @@
     }
     .information-part {
       display: grid;
-      grid-template-columns: 3fr 1fr;
+      grid-template-columns: 3fr 1.3fr;
       gap: 2em;
 
       .informations-list {
@@ -98,6 +98,7 @@
           display: flex;
           align-items: center;
           border-radius: 0 0.5em 0 0.5em;
+          white-space: nowrap;
           svg {
             color: #d9d9d9;
             width: 20px;
