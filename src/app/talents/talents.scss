@@ -280,3 +280,118 @@
     pointer-events: none;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  #page_talent {
+    .talent-list {
+      .talent-part {
+        .talent-group {
+          padding: 1em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #page_talent {
+    .talent-list {
+      .title-part {
+        // margin: 1em;
+        padding: 0.5em;
+
+        .stick-title {
+          position: relative;
+          top: 0;
+          h2 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      .talent-part {
+        .talent-group {
+          gap: 0.5em;
+          .talents {
+            grid-template-columns: 1fr 1fr;
+            gap: 0.25em;
+            .talent {
+              width: 100%;
+              .head {
+                font-size: 0.7rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #page_talent .talent-list .talent-part .talent-group.past .talents {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5em;
+
+    .talent {
+      padding: 0.5em;
+      .head {
+        h2 {
+          font-size: 0.8rem;
+        }
+      }
+
+      .display .pfp {
+        height: 100px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #page_talent {
+    .talent-list {
+      display: flex;
+      flex-direction: column;
+      .title-part {
+        border-bottom: 5px solid var(--brown);
+        text-align: left;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  #page_talent .talent-list .title-part hr {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  #page_talent .talent-list .talent-part .talent-group {
+    padding: 0.5em;
+  }
+  #page_talent .talent-list .talent-part .talent-group .talents .talent {
+    padding: 0.5em;
+    border-radius: 0.1em;
+    display: flex;
+    // float: left;
+    flex-direction: column;
+    justify-content: space-between;
+    .head {
+      h2 {
+        font-size: 0.7rem;
+      }
+    }
+
+    .display {
+      margin: 0;
+      margin-top: 1em;
+    }
+    .display .pfp {
+      height: 120px;
+    }
+  }
+
+  #page_talent .talent-list .talent-part .talent-group.past .talents {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
