@@ -1,6 +1,6 @@
 #jump-section {
   position: fixed;
-  right: 0%;
+  right: 0vw;
   top: 0%;
   height: 100vh;
   // width: min(500px, 90vw);
@@ -21,7 +21,7 @@
     right: 0%;
   }
   &.closed {
-    right: -100%;
+    right: -100vw;
   }
   .close-container {
     padding: 1em;
