@@ -6,6 +6,8 @@
     z-index: 10;
     opacity: 0;
     rotate: -50deg;
+    z-index: 1000;
+
     &.visible {
       opacity: 1;
       rotate: 0deg;
@@ -279,5 +281,220 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #page_management {
+    .management {
+      article {
+        max-width: 100%;
+        padding: 0 10%;
+      }
+    }
+    .milestones .confine {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+@media screen and (max-width: 631px) {
+  #page_management {
+    padding-top: 2em;
+    overflow: hidden;
+    .nav-opener {
+      right: initial;
+      left: 2%;
+    }
+
+    .profile-head {
+      display: flex;
+      // flex-direction: column;
+      flex-wrap: wrap;
+      h2 {
+        width: 100%;
+      }
+      // flex-direction: column;
+    }
+  }
+  #page_management .management .decor_triangle {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 768px) {
+  #page_management {
+    .management {
+      article {
+        padding: 0 5%;
+
+        .profile-head {
+          // max-width: ;
+          h2 {
+            font-size: 4rem;
+          }
+        }
+      }
+    }
+  }
+  #page_management .skills .confine {
+    max-width: 90%;
+  }
+  #page_management .milestones .milestone-container .milestone-list .milestone {
+    height: initial;
+    p {
+      text-align: justify;
+    }
+  }
+  #page_management .milestones .milestone-container {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+
+  #page_management .skills .confine .skill-list {
+    gap: 0.25em;
+    width: 100%;
+  }
+  #page_management .skills .confine .skill-list .skill-card {
+    padding: 1em;
+    width: 32%;
+    .card-head {
+      h2 {
+        font-size: 0.8rem;
+      }
+      hr {
+        margin: 0.25em;
+      }
+
+      p {
+        font-size: 0.6rem;
+        text-align: justify;
+      }
+    }
+    .note-list {
+      gap: 0.5em;
+      .note {
+        padding: 0.7sem;
+
+        h2 {
+          font-size: 0.6rem;
+        }
+        p {
+          font-size: 0.5rem;
+          text-align: justify;
+        }
+      }
+    }
+  }
+
+  #information .confine .information-part .information-controls .btn-info {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #page_management .skills .confine .skill-list {
+    gap: 50px;
+    width: 100%;
+  }
+
+  #information .confine .information-part {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #information .decor-side {
+    display: none;
+  }
+  #page_management .skills .confine .skill-list .skill-card {
+    padding: 1em;
+    width: 100%;
+    .card-head {
+      h2 {
+        font-size: 0.8rem;
+      }
+      hr {
+        margin: 0.25em;
+      }
+
+      p {
+        font-size: 0.6rem;
+        text-align: justify;
+      }
+    }
+    .note-list {
+      gap: 0.5em;
+      .note {
+        padding: 0.7sem;
+
+        h2 {
+          font-size: 0.6rem;
+        }
+        p {
+          font-size: 0.5rem;
+          text-align: justify;
+        }
+      }
+    }
+  }
+
+  #information .confine .information-head .head-text h2 {
+    font-size: 2.3rem;
+  }
+}
+@media screen and (max-width: 420px) {
+  #page_management {
+    .management .bio {
+      font-size: 0.9rem;
+      text-align: justify;
+    }
+  }
+
+  #information .confine .information-part .informations-list .info-card {
+    padding: 1.5em;
+    h2 {
+      font-size: 1.4rem;
+    }
+    p {
+      font-size: 0.8rem;
+      text-align: justify;
+    }
+  }
+  #information
+    .confine
+    .information-part
+    .information-controls
+    .btn-info.active {
+    scale: 1;
+  }
+  #page_management .skills .confine {
+    .skills-head {
+      justify-content: center;
+    }
+    .text-part h2 {
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+  #page_management .milestones .milestone-container .milestone-list {
+    margin: 0;
+    gap: 0.5em;
+    .milestone {
+      padding: 1em;
+      h2 {
+        font-size: 0.9rem;
+      }
+      p {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #page_management .skills .confine .skills-head h2 {
+    font-size: 1.4rem;
   }
 }

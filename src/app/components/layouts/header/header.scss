@@ -5,6 +5,7 @@
   justify-content: space-between;
   gap: 1em;
   background: white;
+  z-index: 1000;
   .panel {
     background: white;
     border: 5px solid var(--brown);
@@ -234,6 +235,10 @@
     span {
       display: flex;
       align-items: center;
+      svg {
+        max-height: 20px;
+        width: 20px;
+      }
       gap: 0.5em;
     }
     &:hover,

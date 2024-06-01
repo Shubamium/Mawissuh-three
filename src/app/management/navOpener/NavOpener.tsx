@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { BiMenu } from "react-icons/bi";
+import { BsArrowLeftShort, BsThreeDotsVertical } from "react-icons/bs";
+import { HiArrowLeftEndOnRectangle } from "react-icons/hi2";
 
 type Props = {};
 
@@ -29,7 +31,7 @@ export default function NavOpener({}: Props) {
           document.body.dispatchEvent(event);
         }}
       >
-        <BiMenu />
+        <BsThreeDotsVertical />
       </button>
     </div>
   );
