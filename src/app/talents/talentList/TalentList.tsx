@@ -61,13 +61,15 @@ export default function TalentList({ activeTalent, inactiveTalent }: Props) {
                     <hr />
                   </div>
                   <div className="display">
-                    <img
-                      src={
-                        urlFor(talent.pfp).url() ?? "/graphics/pfp-sample.png"
-                      }
-                      alt=""
-                      className="pfp"
-                    />
+                    {talent.pfp && (
+                      <img
+                        src={
+                          urlFor(talent.pfp).url() ?? "/graphics/pfp-sample.png"
+                        }
+                        alt=""
+                        className="pfp"
+                      />
+                    )}
                   </div>
                 </div>
               );
@@ -124,13 +126,15 @@ export default function TalentList({ activeTalent, inactiveTalent }: Props) {
                     <hr />
                   </div>
                   <div className="display">
-                    <img
-                      src={
-                        urlFor(talent.pfp).url() ?? "/graphics/pfp-sample.png"
-                      }
-                      alt=""
-                      className="pfp"
-                    />
+                    {talent.pfp && (
+                      <img
+                        src={
+                          urlFor(talent.pfp).url() ?? "/graphics/pfp-sample.png"
+                        }
+                        alt=""
+                        className="pfp"
+                      />
+                    )}
                   </div>
                 </div>
               );
