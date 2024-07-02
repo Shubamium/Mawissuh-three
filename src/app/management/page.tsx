@@ -71,7 +71,9 @@ export default async function Management({}: Props) {
 			notes
 		}
 	`);
-
+  // document.addEventListener("scroll", (e) => {
+  //   // document.body.height
+  // });
   const information = await fetchData<Information[]>(`
 		*[_type == "informations"]{
 			_id,

@@ -297,6 +297,17 @@
       display: flex;
       flex-direction: column;
     }
+    .milestones .graphics {
+      justify-content: center;
+    }
+    .milestones .ms-art {
+      margin-top: 0;
+      max-height: 400px;
+
+      &:hover {
+        transform: translateY(20%);
+      }
+    }
   }
 }
 @media screen and (max-width: 631px) {
