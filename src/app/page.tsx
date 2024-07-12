@@ -5,14 +5,6 @@ export default function Home() {
       <h1 hidden={true}>MARIMANAGEMENT</h1>
       <section className="hero">
         <div className="confine">
-          <figure>
-            <img
-              src="/graphics/placeholder-logo.png"
-              style={{ opacity: 0 }}
-              alt=""
-              className="logo"
-            />
-          </figure>
           <article>
             <h2>
               This service is a luxury and{" "}
@@ -25,6 +17,14 @@ export default function Home() {
               your needs and goals are met!
             </p>
           </article>
+          <figure>
+            <img
+              src="/graphics/home-art.png"
+              // style={{ opacity: 0 }}
+              alt=""
+              className="logo"
+            />
+          </figure>
         </div>
       </section>
     </main>
