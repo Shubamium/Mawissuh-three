@@ -57,6 +57,7 @@
     }
     article {
       color: var(--brown);
+      margin-top: 100px;
       h2 {
         font-size: 1.2rem;
         line-height: 100%;
@@ -79,9 +80,17 @@
 @media screen and (max-width: 1024px) {
   #page_home {
     .hero {
+      figure {
+        margin-top: -20px;
+        scale: 0.7;
+        &::before {
+          left: -30%;
+          // right: 0%;
+        }
+      }
       .confine {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         text-align: center;
         padding: 0;
@@ -138,6 +147,12 @@
   #page_home {
     .hero {
       .confine {
+        figure {
+          &::before {
+            left: -50%;
+            // right: 0%;
+          }
+        }
         article {
           display: flex;
           flex-direction: column;
