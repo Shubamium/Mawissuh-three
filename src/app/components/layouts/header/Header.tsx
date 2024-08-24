@@ -44,12 +44,12 @@ export default function Header({}: Props) {
         <Link className={`nav-btn ${path === "/" ? "active" : ""}`} href={"/"}>
           <BsHouseFill /> home
         </Link>
-        <Link
+        {/* <Link
           className={`nav-btn ${include("management") ? "active" : ""}`}
           href={"/management"}
         >
           <BiBriefcase /> management
-        </Link>
+        </Link> */}
         <Link
           className={`nav-btn ${include("talents") ? "active" : ""}`}
           href={"/talents"}
@@ -130,7 +130,7 @@ export default function Header({}: Props) {
             <FaTwitter />
           </a> */}
         </div>
-        {include("/management") && (
+        {!include("/talents") && (
           <button
             className="taskbar-btn btn"
             onClick={() => {

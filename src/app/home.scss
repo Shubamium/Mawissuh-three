@@ -1,7 +1,8 @@
-#page_home {
+.page_home {
   margin-top: 60px;
   .hero {
     background: #fff8f7;
+    margin-bottom: 500px;
     .confine {
       max-width: 1500px;
       margin: 0 auto;
@@ -78,7 +79,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  #page_home {
+  .page_home {
     .hero {
       figure {
         margin-top: -20px;
@@ -101,7 +102,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  #page_home {
+  .page_home {
     .hero {
       .confine {
         article {
@@ -122,7 +123,7 @@
 }
 
 @media screen and (max-width: 550px) {
-  #page_home {
+  .page_home {
     .hero {
       .confine {
         article {
@@ -144,7 +145,7 @@
 }
 
 @media screen and (max-width: 425px) {
-  #page_home {
+  .page_home {
     .hero {
       .confine {
         figure {
