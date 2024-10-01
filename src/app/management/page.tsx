@@ -107,14 +107,14 @@ export default async function Management({}: Props) {
               your needs and goals are met!
             </p>
           </article>
-          <figure>
-            {/* <img
+          {/* <figure>
+            <img
               src="/graphics/home-art.png"
               // style={{ opacity: 0 }}
               alt=""
               className="logo"
-            /> */}
-          </figure>
+            />
+          </figure> */}
         </div>
       </section>
       <NavOpener />
@@ -178,11 +178,12 @@ export default async function Management({}: Props) {
             </div>
           </div>
           <figure className="graphics">
-            {/* <img
+            <img
               src="/graphics/milestone-artnew.png"
               alt=""
               className="ms-art"
-            /> */}
+              style={{ opacity: 0 }}
+            />
           </figure>
         </div>
       </section>
