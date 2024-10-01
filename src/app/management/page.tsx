@@ -108,12 +108,12 @@ export default async function Management({}: Props) {
             </p>
           </article>
           <figure>
-            <img
+            {/* <img
               src="/graphics/home-art.png"
               // style={{ opacity: 0 }}
               alt=""
               className="logo"
-            />
+            /> */}
           </figure>
         </div>
       </section>
@@ -178,11 +178,11 @@ export default async function Management({}: Props) {
             </div>
           </div>
           <figure className="graphics">
-            <img
+            {/* <img
               src="/graphics/milestone-artnew.png"
               alt=""
               className="ms-art"
-            />
+            /> */}
           </figure>
         </div>
       </section>
